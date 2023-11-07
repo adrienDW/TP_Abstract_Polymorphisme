@@ -1,8 +1,8 @@
 <?php
     require_once './Class/GameValue.php';
-    require_once './Interface/RandomGenerator.php';
+    require_once './Interface/RandomGeneratorInterface.php';
 
-class Coin implements RandomGenerator{
+class Coin implements RandomGeneratorInterface{
     private $value;
     public function __construct(protected gameValue $nbLances)
     {
@@ -26,6 +26,10 @@ class Coin implements RandomGenerator{
     }
     public function getCurrentValue(){
         return $this->value;
+    }
+    public function getNbValue()
+    {
+        return 1;
     }
 
 }
